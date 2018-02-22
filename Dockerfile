@@ -26,6 +26,7 @@ ENV PACKAGES="\
   ca-certificates \
   python3 \
   python3-dev \
+  python2-dev \
   py-setuptools \
   mysql \ 
   mysql-client\
