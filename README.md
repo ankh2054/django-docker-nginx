@@ -29,7 +29,7 @@ To buld the docker modx image:
 Download and extract files to modx/ directory. 
 
 		$ cd django/
-		$ docker build -t django . 
+		$ docker build https://github.com/ankh2054/django-docker-nginx.git -t django-nginx 
 
 To run it:
 
