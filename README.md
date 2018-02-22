@@ -42,7 +42,7 @@ To run it:
 	 -e 'DB_PASS=django'
 	 -e 'ROOT_PWD=django'
 	 -v /data/sites/www.test.co.uk/mysql:/var/lib/mysql \
-	 -v /data/sites/www.test.co.uk:/DATA django
+	 -v /data/sites/www.test.co.uk:/DATA django-nginx
 
 
 This will create a new DJANGO APP with the following values:
