@@ -34,16 +34,15 @@ This ensures that even if your container is lost or deleted, you won't loose you
 ### To run it with LETENCRYPT:
 
     $ docker run  --name docker.django --expose 80 \
-	 -d -e 'VIRTUAL_HOST=www.test.co.uk' \
-	 -e 'DJANGO_APP_NAME=test' \
-	 -e "VIRTUAL_HOST=nginx.42strings.co.uk" \
+	 -d -e "VIRTUAL_HOST=nginx.42strings.co.uk" \
+	 -e 'DJANGO_APP_NAME=test' \ 
  	 -e "LETSENCRYPT_HOST=nginx.42strings.co.uk" \
 	 -e "LETSENCRYPT_EMAIL=charles@structa.co.uk" \
-	 -e 'PIP_PACKAGES=django==1.11 gunicorn dj-static django-anymail mysqlclient'
-	 -e 'DB_NAME=django'
-	 -e 'DB_USER=django'
-	 -e 'DB_PASS=django'
-	 -e 'ROOT_PWD=django'
+	 -e 'PIP_PACKAGES=django==1.11 gunicorn dj-static django-anymail mysqlclient' \
+	 -e 'DB_NAME=django' \
+	 -e 'DB_USER=django' \
+	 -e 'DB_PASS=django' \
+	 -e 'ROOT_PWD=django' \
 	 -v /data/sites/www.test.co.uk/mysql:/var/lib/mysql \
 	 -v /data/sites/www.test.co.uk:/DATA django-nginx
 
