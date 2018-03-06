@@ -19,7 +19,7 @@ If using Letsencrypt to automate the creation of a SSL certificate, you need to 
 
 
 Firstly you need to create the necessary folders on your docker host. The container will expose directories created below directly into the container to ensure our WWW, and LOG folders are persistent.
-This ensures that even if your container is lost or deleted, you won't loose your MODX database or website files.
+This ensures that even if your container is lost or deleted, you won't loose your DJANGO database or website files.
 
 	$ mkdir -p /data/sites/www.test.co.uk/www
 	$ mkdir -p /data/sites/www.test.co.uk/logs
@@ -37,7 +37,7 @@ This ensures that even if your container is lost or deleted, you won't loose you
 	 -d -e "VIRTUAL_HOST=nginx.42strings.co.uk" \
 	 -e 'DJANGO_APP_NAME=test' \ 
  	 -e "LETSENCRYPT_HOST=nginx.42strings.co.uk" \
-	 -e "LETSENCRYPT_EMAIL=charles@structa.co.uk" \
+	 -e "LETSENCRYPT_EMAIL=info@42strings.co.uk \
 	 -e 'PIP_PACKAGES=django==1.11 gunicorn dj-static django-anymail mysqlclient' \
 	 -e 'DB_NAME=django' \
 	 -e 'DB_USER=django' \
@@ -56,7 +56,7 @@ This will create a new DJANGO APP with the following values:
 	$ Mysql user to access django DB: django
 	$ Mysql password for user: django
 	$ Mysql root password: django
-	$ SSL certificate created for the hostname nginx.42strings.co.uk with email address charles@structa.co.uk.
+	$ SSL certificate created for the hostname nginx.42strings.co.uk with email address info@42strings.co.uk.
 	
 	Note that your container can still be listening on port 80, since all external connections will hit your NGINX proxy 	     first, whcih will force users onto HTTPS. 
 	
