@@ -133,6 +133,7 @@ command=gunicorn ${DJANGO_APP_NAME}.wsgi:application --bind 0.0.0.0:8000 --worke
 directory=/DATA/www/
 autostart=true
 autorestart=true
+user=nginx
 
 numprocs=1
 EOF
