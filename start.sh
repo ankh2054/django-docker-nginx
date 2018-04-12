@@ -170,7 +170,7 @@ EOF
   echo 'Using sed to turn white space into new lines'
   sed 's/\s\+/\n/g' /DATA/www/temp.txt > /DATA/www/requirements.txt && rm /DATA/www/temp.txt
   echo 'Pip install requirements.txt' 
-  pip install --no-cache-dir -r /DATA/www/requirements.txt 
+  pip3 install --no-cache-dir -r /DATA/www/requirements.txt 
 }
 
 
